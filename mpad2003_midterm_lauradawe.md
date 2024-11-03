@@ -208,6 +208,9 @@ Each pivot table was generated using `Insert -> Pivot` table.  The data range of
 
 The *Garbage and Recycling* percentage of Service Requests stands out since it represents a significantly larger portion, 35.94%, than the others.  I feel this would be a good candidate for futher analysis, where a good data story might be found.  There could be many stories relating to the distribution of its sub-cataogories like Blue vs. Black vs. Organic recycling, or other associated variable, eg. service calls by Ward.
 
+Further, this one large catagory could warrant repeated EDA projects on its various sub-catagories, such as Ward distribution, Description(detailed requests) as well as extended research into costs, population, etc.
+
+<br>
 
 ![](Screenshot_PivotTables.png)<br>
 *Figure 4: This pivot table shows.*
@@ -219,13 +222,29 @@ The *Garbage and Recycling* percentage of Service Requests stands out since it r
 
 ## 4. Potential Story
 
-The *Garbage and Recycling* percentage of Service Requests as compared to other departments represent a significantly larger portion, 35.94%. I believe this variable holds a high potential for interesting data stories. Once could imagine there are asscociated economical, environmental, and political aspects that would provide multiple avenues to explore.  
+To unlock a potential story idea, the following quote came to my mind: 
 
-Further, this one large catagory could warrant repeated EDA projects on its various sub-catagories, such as Ward distribution, Description(detailed requests) as well as extended research into costs, population, etc.
+
+>"The process of visually exploring data can be summarized in a single sentence: find patterns and trends lurking in the data and then observe the deviations from those patterns. Interesting stories may arise from both the norm—also called the smooth—and the exceptions." (Cairo, 2016) (cite)
+
+The *Garbage and Recycling* percentage of Service Requests as compared to other departments represent a significantly larger portion, 35.94%. I believe this variable holds a high potential for interesting data stories. One could imagine there are asscociated economical, environmental, and political aspects that would provide multiple avenues to explore.  
+
+
+This story would be of high value and interest for the residents of the City of Ottawa given that the city’s plans to enforce new garbage limits in September 2024. It is probable that the upcoming restrictions may have altered the behavior and attitudes of residents as they prepare for the new regulations. The story could be focused on this particular aspect to highlight community reaction and perspectives. Interviews with residents across the city about their thoughts and reactions could support the story.
+
+This story would touch on both human interest and municipal governance issues.
 
 ## 5. Conclusion
 
-limitations of OpenRefine.  managing large datasets.
+>In other words, you want to show the story of your data not just tell it. Visuals should take your audience on a journey of how the data changed over time or highlight the meaning behind the numbers. (video of visualizing GSheets, 20xx) (cite)
+
+The quote above provides and accruate summary of  my thought process. I wanted to be able to find data that could tell a compelling story relavent to current events. It was gratifying to find that the results lined up to a very timely and contentious issue in the City of Ottawa.  I think this could have been an excellent opportunity to explore the mindset of our community as it pertains to one of our most significant urban problems.  
+
+I found the most challenging aspect of this project to be the limitation of OpenRefine's clustering feature.  It was frustrating that seemingly obvious common descriptions were not identified as such, eg. the *Animal-* catagory.
+
+I expected managing large datasets to be challenging but the tools available, primarily in Google Sheets, proved to be very powerful and easy to configure.  However, there were specific charts that I wasn't able to created as expected due to the complexities of its definition, eg. a stacked bar graph.
+
+From a learning perspective, its given me confidence that large volume's of data can be reduced into digestable tables and visualizations providing the basis for a variety of data stories to naturally emerge.
 
 ## 6. References
 
