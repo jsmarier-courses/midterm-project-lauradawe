@@ -5,12 +5,14 @@
 
 # Midterm Project: Exploratory Data Analysis (EDA)
 
-REMOVE THIS:
-* [The template repository for this assignment in case you delete something by mistake](https://github.com/jsmarier/jou4100_jou4500_mpad2003_project2_template)
+
 
 ## Foreword
 
-The City of Ottawa accepts service requests for activities that require action by city-led departments. A summary of requests for services, as well as associated data, is available to the public via the city’s open data portal. Analysis of the data can provide an indication of the issues and problems faced by the city. This project will use this data to identify potential stories that would be of interest to the community. (cite) https://open.ottawa.ca/
+The City of Ottawa accepts service requests for activities that require action by city-led departments. A summary of requests for services, as well as associated data, is available to the public via the city’s open data portal. 
+>"Data is presented by ward and shows the responsible City department and service request description." (City of Ottawa, 2023) (cite) https://open.ottawa.ca/
+
+Analysis of the data can provide an indication of the issues and problems citizens encounter in the city. This project will use this data to identify potential stories that would be of interest to the community. 
 
 
 
@@ -18,7 +20,11 @@ The City of Ottawa accepts service requests for activities that require action b
 
 ## 1. Introduction
 
-Putting into practice what has been learned in class, this project was to uncover insights, patterns, and trends with storytelling potential based on data taken from service calls to the City of Ottawa. The data was extracted from the City of Ottawa Open Data Portal and was a subset of data containing 28,539 entries covering the period between August 1 and September 1, 2024. The methodology used to clean the data was primarily linear using a vimo analysis to correct or remove invalid data; google sheets tools to apply to refine the data set down to its essential elements, and; open refine to further summarise outputs for better identification. Analysis is quantitative, using numerical data counts to quantify patterns. While there was some feedback between analysis and data cleaning, there was not a significant amount of iteration. Pivot tables and charts are included to condense large amounts of data and to communicate it in a visual and easy to understand manner. 
+Putting into practice what has been learned in class, this project was to uncover insights, patterns, and trends with storytelling potential based on data taken from service calls to the City of Ottawa. The data was extracted from the City of Ottawa Open Data Portal and was a subset of data containing 28,539 entries covering the period between August 1 and September 1, 2024.
+
+>Given that the source of the data was in raw format a crucial step in the process is to "...clean the data before using it for analysis which includes doing such things as correcting formatting, removing or correcting erroneous data, or something as simple a taking out an extra space." (Statistics Canada, 2021) (cite) https://www.statcan.gc.ca/wtc/data-literacy/journey
+
+The methodology used to clean the data was primarily linear using a vimo analysis to correct or remove invalid data; google sheets tools to apply to refine the data set down to its essential elements, and; open refine to further summarise outputs for better identification. Analysis is quantitative, using numerical data counts to quantify patterns. While there was some feedback between analysis and data cleaning, there was not a significant amount of iteration. Pivot tables and charts are included to condense large amounts of data and to communicate it in a visual and easy to understand manner. 
 
 The datasets used in this analysis:
 * [City of Ottawa's open data portal *"2024 Service Requests"*](https://open.ottawa.ca/documents/65fe42e2502d442b8a774fd3d954cac5/about)
@@ -72,19 +78,19 @@ There is a significant amount of missing data in some of the columns, especially
 
 In order to perform a VIMO analysis, there can be some iteration between cleaning data and analyzing it for validity or correctness.  For example, auto-filter provides a valuable tool to identify missing data (blank fields) and was performed as part of the data cleaning process (See section 3.2 below).
 
-Subsequently, chart tools in Google Sheets were applied to key variables to determine the valdity of the data.  See various charts in Fig. 2.  Looking into these charts, the summarized data values look to be valid for these types of variables.  Also, some potential story ideas may be apparent in these visualiztions.
+>This piece of advice from Statscan applied: "Look at the range of values for key variables, ignoring the missing and invalid values, is the range and distribution of values realistic?...Do the variables make sense together.  (Statistics Canada, 20XX) (vimo video)
+
+Subsequently, chart tools in Google Sheets were applied to key variables to determine the validity of the data.  See various charts in Fig. 2.  Looking into these charts, the summarized data values look to be valid for these types of variables.  Also, some potential story ideas may be apparent in these visualiztions.
 
 
-The data is organized by Service Request, Type(Department), Description, Ward, and Channel amongst other factors such as time, location and status. The type of requests are organized by general areas such as garbage and recycling, parking, noise, maintenance, animals/pets etc
+The data is organized by Service Request, Type(Department), Description, Ward, and Channel amongst other factors such as time, location and status. The type of requests are organized by general areas such as garbage and recycling, parking, noise, maintenance, animals/pets, etc.
+
 
 ![](Screenshot_VIMOCharts.png)<br>
 *Figure 2: Bar charts of key variables in Google Sheets.*
 
 <br>
 
-**For review:**
-
-As Cairo (2016) argues, a data visualization should be truthful...
 
 ### 3.2. Cleaning Data
 
@@ -174,7 +180,7 @@ I applied a cluster feature to the *Description* facet due to the field having m
 
  
 
-> Many values that were expected to cluster were not identified by the open refine algorithm. As a result, it was difficult to make good use of portions of the data in the column or large manual effort would be required to combine similar data.
+Many values that were expected to cluster were not identified by the open refine algorithm. As a result, it was difficult to make good use of portions of the data in the column or large manual effort would be required to combine similar data.
 
 <br>
 
@@ -190,27 +196,36 @@ I applied a cluster feature to the *Description* facet due to the field having m
 
 ### 3.3. Exploratory Data Analysis (EDA)
 
-A pivot table was erformed for all variables of interest: Status, *Type(Department), Ward, and Channel*.
+The most useful variables were determined to be: *Status, Type(Department), Ward, and Channel*.  These were chosen since they all could have potentially interesting data when shown as summary table with distribution.
 
-Omitted *Description* variable due to too many values (555 unique values).
+ The *Description* variable was omitted due to too many distinct values. There are 555 unique values, or 142 with clustering.
 
+A pivot table was performed for each of these variables of interest. The strategy here is to use the pivot table summary of the variable (with percent distribution) to highlight any interesting data features it might have. I based this on the following:
+
+> Tables are very powerful when you are dealing with a relatively small number of data points. They show labels and amounts in the most structured and organized fashion and reveal their full potential when combined with the ability to sort and filter the data. (Cairo, 2016) (cite)
+
+Each pivot table was generated using `Insert -> Pivot` table.  The data range of the column(variable) of interest must be selected. In the Pivot table editor, `Add` a `Row` choosing the header of the column.  Also, `Add`  two `Values` for same header using `COUNTA` option shown as Default and `% of grand total`.
+
+The *Garbage and Recycling* percentage of Service Requests stands out since it represents a significantly larger portion, 35.94%, than the others.  I feel this would be a good candidate for futher analysis, where a good data story might be found.  There could be many stories relating to the distribution of its sub-cataogories like Blue vs. Black vs. Organic recycling, or other associated variable, eg. service calls by Ward.
 
 
 ![](Screenshot_PivotTables.png)<br>
 *Figure 4: This pivot table shows.*
 
-**This section should also include a screen capture of your exploratory chart, like so:**
+>According to Cairo, a important part of visualization is: "always remembering that honesty, clarity, and depth come first." (Cairo, 2016)
 
-![](chart-screen-capture.png)<br>
-*Figure 3: This exploratory chart shows...*
+![](Screenshot_TypePieChart.png)<br>
+*Figure 5: City Service Request Breakdown by Departmant*
 
 ## 4. Potential Story
 
-Insert text here.
+The *Garbage and Recycling* percentage of Service Requests as compared to other departments represent a significantly larger portion, 35.94%. I believe this variable holds a high potential for interesting data stories. Once could imagine there are asscociated economical, environmental, and political aspects that would provide multiple avenues to explore.  
+
+Further, this one large catagory could warrant repeated EDA projects on its various sub-catagories, such as Ward distribution, Description(detailed requests) as well as extended research into costs, population, etc.
 
 ## 5. Conclusion
 
-Insert text here.
+limitations of OpenRefine.  managing large datasets.
 
 ## 6. References
 

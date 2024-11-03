@@ -11,4 +11,4 @@ The methodology used to clean the data was primarily linear using a vimo analysi
 
 **Key observations and takeaways:** 
 
-include:xxxxxxxx
+Garbage and recycling services account for the majority of service requests, representing 35.94% of all calls; the distribution of service calls was relatively even between Ottawa's 24 wards; and the majority of calls came in by dispatch or web.
