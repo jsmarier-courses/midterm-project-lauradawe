@@ -24,7 +24,8 @@ The datasets used in this analysis:
 * [City of Ottawa's open data portal *"2024 Service Requests"*](https://open.ottawa.ca/documents/65fe42e2502d442b8a774fd3d954cac5/about)
 * [Sub-dataset (2024-08-01 to 2024-09-01) from Jean-Sébastien Marier Github repo](https://raw.githubusercontent.com/jsmarier/course-datasets/refs/heads/main/ottawa-311-service-requests-august-2024.csv)
 
-This EDA report is composed of the following sections:
+This EDA report is comprised of the following sections:
+1. Introduction
 1. Getting Data
 1. Understanding Data
     - VIMO analysis
@@ -71,7 +72,10 @@ There is a significant amount of missing data in some of the columns, especially
 
 In order to perform a VIMO analysis, there can be some iteration between cleaning data and analyzing it for validity or correctness.  For example, auto-filter provides a valuable tool to identify missing data (blank fields) and was performed as part of the data cleaning process (See section 3.2 below).
 
-Subsequently, chart tools in Google Sheets were applied to key variables to determine the valdity of the data.  See various charts in Fig. 3.  Looking into these charts, the summarized data values look to be valid for these types of variables.  Also, some potential story ideas may be apparent in these visualiztions.
+Subsequently, chart tools in Google Sheets were applied to key variables to determine the valdity of the data.  See various charts in Fig. 2.  Looking into these charts, the summarized data values look to be valid for these types of variables.  Also, some potential story ideas may be apparent in these visualiztions.
+
+
+The data is organized by Service Request, Type(Department), Description, Ward, and Channel amongst other factors such as time, location and status. The type of requests are organized by general areas such as garbage and recycling, parking, noise, maintenance, animals/pets etc
 
 ![](Screenshot_VIMOCharts.png)<br>
 *Figure 2: Bar charts of key variables in Google Sheets.*
@@ -105,132 +109,95 @@ I used `Find and Replace` to find `\N` to be replaced with a blank field.  This 
 
 *Split Function:*
 
-To remove `|` plus a duplicate French translation found in many text values, I used `SPLIT(D2,”|”)` and copied this function down to all rows in Column E.
+To remove `|` plus a duplicate French translation found in many text values, I used `=SPLIT(D2,”|”)` and copied this function down to all rows in Column E.
 
 I then copied the first output column of the split function and pasted (values only) on to the original Column D.
 
  
 
-*This split function process was repeated as above for Column C.*
+This `SPLIT` function process was repeated as above for Column C.
 
  
 
-*Find and Replace*
+*Find and Replace:*
 
-I used “find and replace” to find “#VALUE!” to be replaced with a blank field.
+I used `Find and Replace` to find `#VALUE!` to be replaced with a blank field.
 
 This was to remove any erroneous data leftover from the split function.
 
  
 
-*Manual Editing*
+*Manual Editing:*
 
-I manually replaced | and French description in Row 1 to remove duplicate information.
-
- 
-
-*Trim Whitespace*
-
-I used menu item: data -> data cleanup -> trim whitespace
+I manually replaced `|` and French tranlations in Row 1 to remove duplicate information.
 
  
 
-*Autofilter*
+*Trim Whitespace:*
 
-I selected all cell in the spreadsheet and applied “autofilter”.
-
-I bolded and used freeze contents of Row 1 to improve aesthetics and readability.
+I used menu item: `Data -> Data Cleanup -> Trim Whitespace` on entire spreadsheet.
 
  
 
-*Remove/Correct Blank Cells/Rows*
+*Autofilter:*
 
-I used filter on Column A (Service Requests) show only blanks and deleted two blank rows.
+I selected all cell in the spreadsheet and applied `Autofilter`.
 
- 
-
-*Sort Data*
-
-I used autofilter again to sort Column E by date (A-Z sort)
+I applied **Bold** font and used `View -> Freeze -> 1 Row` on Row 1 to improve readability and functionality.
 
  
 
-Downloaded a .CVS file to prepare data for use in OpenRefine.
+*Remove/Correct Blank Cells/Rows:*
+
+I used filter functions on Column A (Service Requests) to select `Blanks` and deleted two entirely blank rows.
 
  
 
----
+*Sort Data:*
+
+I used `Filter` again to sort Column E by date (A-Z sort) as the most useful ordered variable.
 
  
 
-**I further cleaned the data in OpenRefine:**
+Using `File -> Download -> Comma Seperated Values(.csv)` a .csv file was downloaded to prepare data for use in OpenRefine.
+
+
+--- 
+
+**The data was further cleaned in OpenRefine:**
 
  
 
-I opened .CSV file in OpenRefine and created facets for column,s status, type, description, ward and channel.
+The .csv file was imported into OpenRefine and facets created for the columns of interest: *Status, Type, Description, Ward and Channel*.
 
-I applied a cluster feature to the description facet due to the field having many values that could be combined or treated as one.
-
-Was able to reduce the number of values from 555 to 142.
+I applied a cluster feature to the *Description* facet due to the field having many values that could be combined or treated as one.  This reduced the number of values from 555 to 142.
 
  
 
 > Many values that were expected to cluster were not identified by the open refine algorithm. As a result, it was difficult to make good use of portions of the data in the column or large manual effort would be required to combine similar data.
 
- 
+<br>
 
-INSERT: Screen capture of clean data.
+![](Screenshot_OpenRefineFacetCluster.png)<br>
+*Figure 2: OpenRefine facets and clustering tools.*
 
- 
-
-Performed a pivot table for all interesting variables
-
-Omitted description variable due to too many values (877 records).
-
- 
-
-Pivot Table #1
-
-
-VIMO SECTION
-
- 
-
- 
-
- 
-
-Data description you asked me to save
-
- 
-
-The data is organized by service request/description, responsible department, and ward amongst other factors such as time, location and status. The type of requests are organized by general areas such as garbage and recycling, parking, noise, maintenance, animals/pets etc
-
+ <br>
 
 ![](Screenshot_CleanedData.png)<br>
-*Figure 2: Dataset after appling Google Sheets cleaning tools.*
+*Figure 3: Dataset after appling Google Sheets cleaning tools.*
 
-
-
-
-**Here are examples of functions and lines of code put in grey boxes:**
-
-1. If you name a function, put it between "angled" quotation marks like this: `IMPORTHTML`.
-1. If you want to include the entire line of code, do the same thing, albeit with your entire code: `=IMPORTHTML("https://en.wikipedia.org/wiki/China"; "table", 5)`.
-1. Alternatively, you can put your code in an independent box using the template below:
-
-``` r
-=IMPORTHTML("https://en.wikipedia.org/wiki/China"; "table", 5)
-```
+<br>
 
 ### 3.3. Exploratory Data Analysis (EDA)
 
-Insert text here.
+A pivot table was erformed for all variables of interest: Status, *Type(Department), Ward, and Channel*.
 
-**This section should include a screen capture of your pivot table, like so:**
+Omitted *Description* variable due to too many values (555 unique values).
 
-![](pivot-table-screen-capture.png)<br>
-*Figure 2: This pivot table shows...*
+
+
+![](Screenshot_PivotTables.png)<br>
+*Figure 4: This pivot table shows.*
 
 **This section should also include a screen capture of your exploratory chart, like so:**
 
