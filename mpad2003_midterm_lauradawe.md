@@ -174,7 +174,7 @@ Using `File -> Download -> Comma Seperated Values(.csv)` a .csv file was downloa
 
  
 
-The .csv file was imported into OpenRefine and facets created for the columns of interest: *Status, Type, Description, Ward and Channel*.
+The .csv file was imported into OpenRefine and facets created for the columns of interest: *Status, Type, Description, Ward and Channel*.  See Fig. 3.
 
 I applied a cluster feature to the *Description* facet due to the field having many values that could be combined or treated as one.  This reduced the number of values from 555 to 142.
 
@@ -182,15 +182,17 @@ I applied a cluster feature to the *Description* facet due to the field having m
 
 Many values that were expected to cluster were not identified by the open refine algorithm. As a result, it was difficult to make good use of portions of the data in the column or large manual effort would be required to combine similar data.
 
+See Fig. 4 for dataset after data was cleaned.
+
 <br>
 
 ![](Screenshot_OpenRefineFacetCluster.png)<br>
-*Figure 2: OpenRefine facets and clustering tools.*
+*Figure 3: OpenRefine facets and clustering tools.*
 
  <br>
 
 ![](Screenshot_CleanedData.png)<br>
-*Figure 3: Dataset after appling Google Sheets cleaning tools.*
+*Figure 4: Dataset after appling Google Sheets cleaning tools.*
 
 <br>
 
@@ -204,21 +206,23 @@ A pivot table was performed for each of these variables of interest. The strateg
 
 > Tables are very powerful when you are dealing with a relatively small number of data points. They show labels and amounts in the most structured and organized fashion and reveal their full potential when combined with the ability to sort and filter the data. (Kayser, n.d.)
 
-Each pivot table was generated using `Insert -> Pivot` table.  The data range of the column(variable) of interest must be selected. In the Pivot table editor, `Add` a `Row` choosing the header of the column.  Also, `Add`  two `Values` for same header using `COUNTA` option shown as Default and `% of grand total`.
+Each pivot table was generated using `Insert -> Pivot` table.  The data range of the column(variable) of interest must be selected. In the Pivot table editor, `Add` a `Row` choosing the header of the column.  Also, `Add`  two `Values` for same header using `COUNTA` option shown as Default and `% of grand total`.  See Fig. 5.
 
 The *Garbage and Recycling* percentage of Service Requests stands out since it represents a significantly larger portion, 35.94%, than the others.  I feel this would be a good candidate for futher analysis, where a good data story might be found.  There could be many stories relating to the distribution of its sub-cataogories like Blue vs. Black vs. Organic recycling, or other associated variable, eg. service calls by Ward.
 
 Further, this one large catagory could warrant repeated EDA projects on its various sub-catagories, such as Ward distribution, Description(detailed requests) as well as extended research into costs, population, etc.
 
+A pie chart was choosen to visualize the proportion of service calls that *Garbage and Recycling* accounted for.  See Fig. 6.
+
 <br>
 
 ![](Screenshot_PivotTables.png)<br>
-*Figure 4: This pivot table shows.*
+*Figure 5: This pivot table shows.*
 
 >According to Cairo, a important part of visualization is: "always remembering that honesty, clarity, and depth come first." (Cairo, 2016)
 
 ![](Screenshot_TypePieChart.png)<br>
-*Figure 5: City Service Request Breakdown by Departmant*
+*Figure 6: City Service Request Breakdown by Departmant*
 
 ## 4. Potential Story
 
