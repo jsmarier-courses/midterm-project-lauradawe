@@ -10,7 +10,7 @@
 ## Foreword
 
 The City of Ottawa accepts service requests for activities that require action by city-led departments. A summary of requests for services, as well as associated data, is available to the public via the city’s open data portal. 
->"Data is presented by ward and shows the responsible City department and service request description." (City of Ottawa, 2023) (cite) https://open.ottawa.ca/
+>"Data is presented by ward and shows the responsible City department and service request description." (The City of Ottawa, 2023)
 
 Analysis of the data can provide an indication of the issues and problems citizens encounter in the city. This project will use this data to identify potential stories that would be of interest to the community. 
 
@@ -22,7 +22,7 @@ Analysis of the data can provide an indication of the issues and problems citize
 
 Putting into practice what has been learned in class, this project was to uncover insights, patterns, and trends with storytelling potential based on data taken from service calls to the City of Ottawa. The data was extracted from the City of Ottawa Open Data Portal and was a subset of data containing 28,539 entries covering the period between August 1 and September 1, 2024.
 
->Given that the source of the data was in raw format a crucial step in the process is to "...clean the data before using it for analysis which includes doing such things as correcting formatting, removing or correcting erroneous data, or something as simple a taking out an extra space." (Statistics Canada, 2021) (cite) https://www.statcan.gc.ca/wtc/data-literacy/journey
+>Given that the source of the data was in raw format a crucial step in the process is to "...clean the data before using it for analysis which includes doing such things as correcting formatting, removing or correcting erroneous data, or something as simple a taking out an extra space." (Statistics Canada, 2021)
 
 The methodology used to clean the data was primarily linear using a vimo analysis to correct or remove invalid data; google sheets tools to apply to refine the data set down to its essential elements, and; open refine to further summarise outputs for better identification. Analysis is quantitative, using numerical data counts to quantify patterns. While there was some feedback between analysis and data cleaning, there was not a significant amount of iteration. Pivot tables and charts are included to condense large amounts of data and to communicate it in a visual and easy to understand manner. 
 
@@ -78,7 +78,7 @@ There is a significant amount of missing data in some of the columns, especially
 
 In order to perform a VIMO analysis, there can be some iteration between cleaning data and analyzing it for validity or correctness.  For example, auto-filter provides a valuable tool to identify missing data (blank fields) and was performed as part of the data cleaning process (See section 3.2 below).
 
->This piece of advice from Statscan applied: "Look at the range of values for key variables, ignoring the missing and invalid values, is the range and distribution of values realistic?...Do the variables make sense together.  (Statistics Canada, 20XX) (vimo video)
+>This piece of advice from Statscan applied: "Look at the range of values for key variables, ignoring the missing and invalid values, is the range and distribution of values realistic?...Do the variables make sense together.  (Statistics Canada, 2020)
 
 Subsequently, chart tools in Google Sheets were applied to key variables to determine the validity of the data.  See various charts in Fig. 2.  Looking into these charts, the summarized data values look to be valid for these types of variables.  Also, some potential story ideas may be apparent in these visualiztions.
 
@@ -202,7 +202,7 @@ The most useful variables were determined to be: *Status, Type(Department), Ward
 
 A pivot table was performed for each of these variables of interest. The strategy here is to use the pivot table summary of the variable (with percent distribution) to highlight any interesting data features it might have. I based this on the following:
 
-> Tables are very powerful when you are dealing with a relatively small number of data points. They show labels and amounts in the most structured and organized fashion and reveal their full potential when combined with the ability to sort and filter the data. (Cairo, 2016) (cite)
+> Tables are very powerful when you are dealing with a relatively small number of data points. They show labels and amounts in the most structured and organized fashion and reveal their full potential when combined with the ability to sort and filter the data. (Kayser, n.d.)
 
 Each pivot table was generated using `Insert -> Pivot` table.  The data range of the column(variable) of interest must be selected. In the Pivot table editor, `Add` a `Row` choosing the header of the column.  Also, `Add`  two `Values` for same header using `COUNTA` option shown as Default and `% of grand total`.
 
@@ -225,7 +225,7 @@ Further, this one large catagory could warrant repeated EDA projects on its vari
 To unlock a potential story idea, the following quote came to my mind: 
 
 
->"The process of visually exploring data can be summarized in a single sentence: find patterns and trends lurking in the data and then observe the deviations from those patterns. Interesting stories may arise from both the norm—also called the smooth—and the exceptions." (Cairo, 2016) (cite)
+>"The process of visually exploring data can be summarized in a single sentence: find patterns and trends lurking in the data and then observe the deviations from those patterns. Interesting stories may arise from both the norm—also called the smooth—and the exceptions." (Cairo, 2016)
 
 The *Garbage and Recycling* percentage of Service Requests as compared to other departments represent a significantly larger portion, 35.94%. I believe this variable holds a high potential for interesting data stories. One could imagine there are asscociated economical, environmental, and political aspects that would provide multiple avenues to explore.  
 
@@ -236,7 +236,7 @@ This story would touch on both human interest and municipal governance issues.
 
 ## 5. Conclusion
 
->In other words, you want to show the story of your data not just tell it. Visuals should take your audience on a journey of how the data changed over time or highlight the meaning behind the numbers. (video of visualizing GSheets, 20xx) (cite)
+>In other words, you want to show the story of your data not just tell it. Visuals should take your audience on a journey of how the data changed over time or highlight the meaning behind the numbers. (Google Career Certificates, 2021)
 
 The quote above provides and accruate summary of  my thought process. I wanted to be able to find data that could tell a compelling story relavent to current events. It was gratifying to find that the results lined up to a very timely and contentious issue in the City of Ottawa.  I think this could have been an excellent opportunity to explore the mindset of our community as it pertains to one of our most significant urban problems.  
 
@@ -248,8 +248,15 @@ From a learning perspective, its given me confidence that large volume's of data
 
 ## 6. References
 
-Include a list of your references here. Please follow [APA guidelines for references](https://apastyle.apa.org/style-grammar-guidelines/references). Hanging paragraphs aren't required though.
 
-**Here's an example:**
+Cairo, A. (2016). The Truthful Art: Data, Charts, and Maps for Communication. New Riders. [https://learning.oreilly.com/library/view/the-truthful-art/9780133440492/?sso_link=yes&sso_link_from=carleton-university](https://learning.oreilly.com/library/view/the-truthful-art/9780133440492/?sso_link=yes&sso_link_from=carleton-university)
 
-Bounegru, L., & Gray, J. (Eds.). (2021). *The Data Journalism Handbook 2: Towards A Critical Data Practice*. Amsterdam University Press. [https://ocul-crl.primo.exlibrisgroup.com/permalink/01OCUL_CRL/hgdufh/alma991022890087305153](https://ocul-crl.primo.exlibrisgroup.com/permalink/01OCUL_CRL/hgdufh/alma991022890087305153)
+The City of Ottawa. (2023). Open Ottawa. Retrieved November 3, 2024, from [https://open.ottawa.ca/](https://open.ottawa.ca/)
+
+Google Career Certificates. (2021, June 25). Crafting Stories with Data | Google Data Analytics Certificate. Youtube. Retrieved November 3, 2024, from [https://www.youtube.com/watch?v=r8KZGpVns3o&t=172s](https://www.youtube.com/watch?v=r8KZGpVns3o&t=172s)
+
+Kayser, N. (n.d.). Become Data Literate in 3 Simple Steps. DataJournalism.com. Retrieved November 3, 2024, from [https://datajournalism.com/read/handbook/one/understanding-data/become-data-literate-in-3-simple-steps](https://datajournalism.com/read/handbook/one/understanding-data/become-data-literate-in-3-simple-steps)
+
+Statistics Canada. (2020, September 23). Data Accuracy and Validation: Methods to ensure the quality of data. Retrieved November 3, 2024, from [https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020008](https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020008)
+
+Statistics Canada. (2021, October 22). Data journey. Retrieved November 3, 2024, from [https://www.statcan.gc.ca/en/wtc/data-literacy/journey](https://www.statcan.gc.ca/en/wtc/data-literacy/journey)
